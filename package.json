@@ -26,6 +26,7 @@
   ],
   "sideEffects": false,
   "scripts": {
+    "cli:watch": "pnpm -C packages/create-insel run start",
     "watch": "tsup --watch",
     "build": "tsup",
     "lint": "prettier -c .",

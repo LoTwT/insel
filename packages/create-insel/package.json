@@ -1,0 +1,22 @@
+{
+  "name": "create-insel",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "create-insel": "bin/create-insel.js"
+  },
+  "scripts": {
+    "start": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.15",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "cac": "^6.7.14"
+  }
+}
