@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "tsc && node bin/create-insel.js",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "play": "node bin/create-insel.js"
   },
   "keywords": [],
   "author": "",
