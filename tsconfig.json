@@ -10,6 +10,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "jsx": "react-jsx",
     "types": ["vitest/globals", "vitest/importMeta"],
     "baseUrl": ".",
     "paths": {

@@ -30,7 +30,7 @@ export function pluginIndexHtml(): Plugin {
 
           try {
             html = await server.transformIndexHtml(
-              req.url,
+              req.url!,
               html,
               req.originalUrl,
             )

@@ -82,6 +82,7 @@ export const bundle = async (root: string) => {
     return [clientBundle, serverBundle] as [RollupOutput, RollupOutput]
   } catch (error) {
     console.log(error)
+    process.exit(1)
   }
 }
 
