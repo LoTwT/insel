@@ -1,4 +1,6 @@
 import { cac } from "cac"
+import path from "path"
+import { createDevServer } from "./dev"
 
 const version = require("../../package.json").version
 
@@ -8,7 +10,10 @@ cli
   .command("[root]", "start dev server")
   .alias("dev")
   .action(async (root: string) => {
-    console.log("dev", root)
+    root = root ? path.resolve(root) : process.cwd()
+    const server = await createDevServer(root)
+    await server.listen()
+    server.printUrls()
   })
 
 cli
