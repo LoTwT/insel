@@ -4,6 +4,7 @@
     "target": "ESNext",
     "module": "commonjs",
     "rootDir": "src",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "jsx": "react-jsx"
   }
 }
