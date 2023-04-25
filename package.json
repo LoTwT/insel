@@ -20,16 +20,19 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "cac": "^6.7.14",
+    "fs-extra": "^11.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.16.0",
     "@types/react": "^18.0.38",
     "@types/react-dom": "^18.0.11",
     "lint-staged": "^13.2.1",
     "pnpm": "^8.3.1",
     "prettier": "^2.8.8",
+    "rollup": "^3.21.0",
     "simple-git-hooks": "^2.8.1",
     "taze": "^0.9.1",
     "typescript": "^5.0.4",
