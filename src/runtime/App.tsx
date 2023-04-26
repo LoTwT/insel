@@ -1,5 +1,5 @@
 import { Layout } from "../theme-default"
 
-export const App = () => {
+export function App() {
   return <Layout />
 }

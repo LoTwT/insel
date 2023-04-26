@@ -1,7 +1,7 @@
-import { App } from "./App"
+import { App } from "./app"
 import { renderToString } from "react-dom/server"
 
-// for ssr component render
+// For ssr component render
 export function render() {
   return renderToString(<App />)
 }
