@@ -12,7 +12,10 @@
     "lint": "prettier -c .",
     "prettier": "prettier -w .",
     "up": "taze latest -I",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "bin": {
     "insel": "bin/insel.js"
@@ -32,6 +35,7 @@
     "@types/node": "^18.16.1",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
+    "@vitest/ui": "^0.30.1",
     "lint-staged": "^13.2.1",
     "pnpm": "^8.3.1",
     "prettier": "^2.8.8",
@@ -39,7 +43,9 @@
     "serve": "^14.2.0",
     "simple-git-hooks": "^2.8.1",
     "tsup": "^6.7.0",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "unplugin-auto-import": "^0.15.3",
+    "vitest": "^0.30.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"

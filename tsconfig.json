@@ -6,6 +6,7 @@
     "target": "ESNext",
     "jsx": "react-jsx",
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["vitest/globals", "vitest/importMeta"]
   }
 }
