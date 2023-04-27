@@ -1,0 +1,20 @@
+{
+  "name": "basic",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "insel dev docs",
+    "build": "insel build docs",
+    "preview": "insel start docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "insel": "workspace:^"
+  }
+}

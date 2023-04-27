@@ -10,7 +10,7 @@ export default defineConfig({
   test: {
     environment: "node",
     passWithNoTests: true,
-    exclude: ["**/node_modules/**", "**/dist/**"],
+    exclude: ["**/node_modules/**", "**/dist/**", "**/e2e/**"],
     threads: true,
   },
 })

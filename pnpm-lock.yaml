@@ -1,74 +1,91 @@
 lockfileVersion: '6.0'
 
-dependencies:
-  '@vitejs/plugin-react':
-    specifier: ^4.0.0
-    version: 4.0.0(vite@4.3.2)
-  cac:
-    specifier: ^6.7.14
-    version: 6.7.14
-  fs-extra:
-    specifier: ^11.1.1
-    version: 11.1.1
-  ora:
-    specifier: ^6.3.0
-    version: 6.3.0
-  react:
-    specifier: ^18.2.0
-    version: 18.2.0
-  react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
-  vite:
-    specifier: ^4.3.2
-    version: 4.3.2(@types/node@18.16.1)
+importers:
 
-devDependencies:
-  '@types/fs-extra':
-    specifier: ^11.0.1
-    version: 11.0.1
-  '@types/node':
-    specifier: ^18.16.1
-    version: 18.16.1
-  '@types/react':
-    specifier: ^18.2.0
-    version: 18.2.0
-  '@types/react-dom':
-    specifier: ^18.2.1
-    version: 18.2.1
-  '@vitest/ui':
-    specifier: ^0.30.1
-    version: 0.30.1
-  lint-staged:
-    specifier: ^13.2.1
-    version: 13.2.1
-  pnpm:
-    specifier: ^8.3.1
-    version: 8.3.1
-  prettier:
-    specifier: ^2.8.8
-    version: 2.8.8
-  rollup:
-    specifier: ^3.21.0
-    version: 3.21.0
-  serve:
-    specifier: ^14.2.0
-    version: 14.2.0
-  simple-git-hooks:
-    specifier: ^2.8.1
-    version: 2.8.1
-  tsup:
-    specifier: ^6.7.0
-    version: 6.7.0(typescript@5.0.4)
-  typescript:
-    specifier: ^5.0.4
-    version: 5.0.4
-  unplugin-auto-import:
-    specifier: ^0.15.3
-    version: 0.15.3(rollup@3.21.0)
-  vitest:
-    specifier: ^0.30.1
-    version: 0.30.1(@vitest/ui@0.30.1)
+  .:
+    dependencies:
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.0.0(vite@4.3.2)
+      cac:
+        specifier: ^6.7.14
+        version: 6.7.14
+      fs-extra:
+        specifier: ^11.1.1
+        version: 11.1.1
+      ora:
+        specifier: ^6.3.0
+        version: 6.3.0
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      vite:
+        specifier: ^4.3.2
+        version: 4.3.2(@types/node@18.16.1)
+    devDependencies:
+      '@playwright/test':
+        specifier: ^1.32.3
+        version: 1.32.3
+      '@types/fs-extra':
+        specifier: ^11.0.1
+        version: 11.0.1
+      '@types/node':
+        specifier: ^18.16.1
+        version: 18.16.1
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.2.0
+      '@types/react-dom':
+        specifier: ^18.2.1
+        version: 18.2.1
+      '@vitest/ui':
+        specifier: ^0.30.1
+        version: 0.30.1
+      execa:
+        specifier: ^7.1.1
+        version: 7.1.1
+      lint-staged:
+        specifier: ^13.2.1
+        version: 13.2.1
+      pnpm:
+        specifier: ^8.3.1
+        version: 8.3.1
+      prettier:
+        specifier: ^2.8.8
+        version: 2.8.8
+      rollup:
+        specifier: ^3.21.0
+        version: 3.21.0
+      serve:
+        specifier: ^14.2.0
+        version: 14.2.0
+      simple-git-hooks:
+        specifier: ^2.8.1
+        version: 2.8.1
+      tsup:
+        specifier: ^6.7.0
+        version: 6.7.0(typescript@5.0.4)
+      tsx:
+        specifier: ^3.12.6
+        version: 3.12.6
+      typescript:
+        specifier: ^5.0.4
+        version: 5.0.4
+      unplugin-auto-import:
+        specifier: ^0.15.3
+        version: 0.15.3(rollup@3.21.0)
+      vitest:
+        specifier: ^0.30.1
+        version: 0.30.1(@vitest/ui@0.30.1)
+
+  e2e/playground/basic:
+    dependencies:
+      insel:
+        specifier: workspace:^
+        version: link:../../..
 
 packages:
 
@@ -304,6 +321,27 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
+  /@esbuild-kit/cjs-loader@2.4.2:
+    resolution: {integrity: sha512-BDXFbYOJzT/NBEtp71cvsrGPwGAMGRB/349rwKuoxNSiKjPraNNnlK6MIIabViCjqZugu6j+xeMDlEkWdHHJSg==}
+    dependencies:
+      '@esbuild-kit/core-utils': 3.1.0
+      get-tsconfig: 4.5.0
+    dev: true
+
+  /@esbuild-kit/core-utils@3.1.0:
+    resolution: {integrity: sha512-Uuk8RpCg/7fdHSceR1M6XbSZFSuMrxcePFuGgyvsBn+u339dk5OeL4jv2EojwTN2st/unJGsVm4qHWjWNmJ/tw==}
+    dependencies:
+      esbuild: 0.17.18
+      source-map-support: 0.5.21
+    dev: true
+
+  /@esbuild-kit/esm-loader@2.5.5:
+    resolution: {integrity: sha512-Qwfvj/qoPbClxCRNuac1Du01r9gvNOT+pMYtJDapfB1eoGN1YlJ1BixLyL9WVENRx5RXgNLdfYdx/CuswlGhMw==}
+    dependencies:
+      '@esbuild-kit/core-utils': 3.1.0
+      get-tsconfig: 4.5.0
+    dev: true
+
   /@esbuild/android-arm64@0.17.18:
     resolution: {integrity: sha512-/iq0aK0eeHgSC3z55ucMAHO05OIqmQehiGay8eP5l/5l+iEr4EIbh4/MI8xD9qRFjqzgkc0JkX0LculNC9mXBw==}
     engines: {node: '>=12'}
@@ -527,6 +565,17 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
+    dev: true
+
+  /@playwright/test@1.32.3:
+    resolution: {integrity: sha512-BvWNvK0RfBriindxhLVabi8BRe3X0J9EVjKlcmhxjg4giWBD/xleLcg2dz7Tx0agu28rczjNIPQWznwzDwVsZQ==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.16.1
+      playwright-core: 1.32.3
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /@polka/url@1.0.0-next.21:
@@ -855,6 +904,10 @@ packages:
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
     dev: false
+
+  /buffer-from@1.1.2:
+    resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
+    dev: true
 
   /buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
@@ -1343,6 +1396,10 @@ packages:
   /get-stream@6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
+    dev: true
+
+  /get-tsconfig@4.5.0:
+    resolution: {integrity: sha512-MjhiaIWCJ1sAU4pIQ5i5OfOuHHxVo1oYeNsWTON7jxYkod8pHocXeh+SSbmu5OZZZK73B6cbJ2XADzXehLyovQ==}
     dev: true
 
   /glob-parent@5.1.2:
@@ -1931,6 +1988,12 @@ packages:
       pathe: 1.1.0
     dev: true
 
+  /playwright-core@1.32.3:
+    resolution: {integrity: sha512-SB+cdrnu74ZIn5Ogh/8278ngEh9NEEV0vR4sJFmK04h2iZpybfbqBY0bX6+BLYWVdV12JLLI+JEFtSnYgR+mWg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /pnpm@8.3.1:
     resolution: {integrity: sha512-0mT2ZAv08J3nz8xUdWhRW88GE89IWgPo/xZhb6acQXK2+aCikl7kT7Bg31ZcnJqOrwYXSed68xjLd/ZoSnBR8w==}
     engines: {node: '>=16.14'}
@@ -2246,6 +2309,13 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
 
+  /source-map-support@0.5.21:
+    resolution: {integrity: sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==}
+    dependencies:
+      buffer-from: 1.1.2
+      source-map: 0.6.1
+    dev: true
+
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
@@ -2470,6 +2540,17 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - ts-node
+    dev: true
+
+  /tsx@3.12.6:
+    resolution: {integrity: sha512-q93WgS3lBdHlPgS0h1i+87Pt6n9K/qULIMNYZo07nSeu2z5QE2CellcAZfofVXBo2tQg9av2ZcRMQ2S2i5oadQ==}
+    hasBin: true
+    dependencies:
+      '@esbuild-kit/cjs-loader': 2.4.2
+      '@esbuild-kit/core-utils': 3.1.0
+      '@esbuild-kit/esm-loader': 2.5.5
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /type-detect@4.0.8:
