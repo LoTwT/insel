@@ -2,6 +2,7 @@ import cac from "cac"
 import { resolve } from "path"
 import { build } from "./build"
 import { createDevServer } from "./dev"
+import { resolveConfig } from "./config"
 
 const cli = cac("insel").version("0.0.1").help()
 
@@ -24,7 +25,8 @@ cli
   .action(async (root: string) => {
     try {
       root = resolve(root)
-      await build(root)
+      const config = await resolveConfig(root, "build", "production")
+      await build(root, config)
     } catch (e) {
       console.log(e)
     }

@@ -1,4 +1,5 @@
-import { relative } from "node:path"
+import { PACKAGE_ROOT } from "node/constants"
+import { join, relative } from "node:path"
 import { SiteConfig } from "shared/types/index"
 import type { Plugin } from "vite"
 import { normalizePath } from "vite"
@@ -8,7 +9,7 @@ const SITE_DATA_ID = "insel:site-data"
 // this plugin is to make front-end have access to the content of sitedata
 export function pluginConfig(
   config: SiteConfig,
-  restartServer: () => Promise<void>,
+  restartServer?: () => Promise<void>,
 ): Plugin {
   return {
     name: "insel:config",
@@ -34,6 +35,16 @@ export function pluginConfig(
         )
         // restart dev server
         await restartServer()
+      }
+    },
+    config() {
+      return {
+        root: PACKAGE_ROOT,
+        resolve: {
+          alias: {
+            "@runtime": join(PACKAGE_ROOT, "src", "runtime", "index.ts"),
+          },
+        },
       }
     },
   }
