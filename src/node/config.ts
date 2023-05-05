@@ -1,14 +1,14 @@
 import fse from "fs-extra"
 import { resolve } from "path"
 import { loadConfigFromFile } from "vite"
-import { UserConfig } from "../shared/types/index"
+import { UserConfig, SiteConfig } from "../shared/types/index"
 
 type RawConfig =
   | UserConfig
   | Promise<UserConfig>
   | (() => UserConfig | Promise<UserConfig>)
 
-export async function resolveConfig(
+export async function resolveUserConfig(
   root: string,
   command: "serve" | "build",
   mode: "development" | "production",
@@ -42,6 +42,31 @@ export async function resolveConfig(
   }
 }
 
+export function resolveSiteData(userConfig: UserConfig): UserConfig {
+  return {
+    title: userConfig.title || "Insel.js",
+    description: userConfig.description || "SSG Framework",
+    themeConfig: userConfig.themeConfig || {},
+    vite: userConfig.vite || {},
+  }
+}
+
+export async function resolveConfig(
+  root: string,
+  command: "serve" | "build",
+  mode: "development" | "production",
+) {
+  const [configPath, userConfig] = await resolveUserConfig(root, command, mode)
+
+  const siteConfig: SiteConfig = {
+    root,
+    configPath,
+    siteData: resolveSiteData(userConfig as UserConfig),
+  }
+
+  return siteConfig
+}
+
 function getUserConfigPath(root: string) {
   try {
     const supportConfigFiles = ["config.ts", "config.js"]
@@ -54,4 +79,8 @@ function getUserConfigPath(root: string) {
     console.error(`Fail to load user config: ${error}`)
     throw error
   }
+}
+
+export function defineConfig(config: UserConfig) {
+  return config
 }
