@@ -5,12 +5,19 @@ import { PACKAGE_ROOT } from "./constants"
 import { resolveConfig } from "./config"
 import { pluginConfig } from "./plugin-insel/config"
 
-export async function createDevServer(root: string) {
+export async function createDevServer(
+  root: string,
+  restartServer: () => Promise<void>,
+) {
   const config = await resolveConfig(root, "serve", "development")
 
   return createServer({
     root,
-    plugins: [pluginIndexHtml(), pluginReact(), pluginConfig(config)],
+    plugins: [
+      pluginIndexHtml(),
+      pluginReact(),
+      pluginConfig(config, restartServer),
+    ],
     server: {
       fs: {
         allow: [PACKAGE_ROOT],
