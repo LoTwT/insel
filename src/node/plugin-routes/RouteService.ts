@@ -57,11 +57,11 @@ ${this.#routeData
   })
   .join("\n")}
 export const routes = [
-  ${this.#routeData
-    .map((route, index) => {
-      return `{ path: '${route.routePath}', element: React.createElement(Route${index}) }`
-    })
-    .join(",\n")}
+${this.#routeData
+  .map((route, index) => {
+    return `{ path: '${route.routePath}', element: React.createElement(Route${index}) }`
+  })
+  .join(",\n")}
 ];
 `
   }
