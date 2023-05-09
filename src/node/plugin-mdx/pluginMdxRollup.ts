@@ -6,6 +6,7 @@ import rehypePluginSlug from "rehype-slug"
 import remarkPluginMDXFrontMatter from "remark-mdx-frontmatter"
 import remarkPluginFrontmatter from "remark-frontmatter"
 import remarkMdxFrontmatter from "remark-mdx-frontmatter"
+import { rehypePluginPreWrapper } from "./rehypePlugins/preWrapper"
 
 export function pluginMdxRollup(): Plugin {
   return pluginMdx({
@@ -28,6 +29,7 @@ export function pluginMdxRollup(): Plugin {
           },
         },
       ],
+      rehypePluginPreWrapper,
     ],
   })
 }
