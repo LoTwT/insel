@@ -21,7 +21,7 @@ export const rehypePluginPreWrapper: Plugin<[], Root> = () => {
         // language-xxx
         const lang = codeClassName.split("-")[1]
 
-        codeNode.properties.className = ""
+        // codeNode.properties.className = ""
 
         // 3. transform HTML ast
         const clonedNode: Element = {
