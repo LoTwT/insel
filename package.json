@@ -72,6 +72,7 @@
     "tsx": "^3.12.6",
     "typescript": "^5.0.4",
     "unist-util-visit": "^4.1.2",
+    "unocss": "^0.52.5",
     "unplugin-auto-import": "^0.15.3",
     "vitest": "^0.30.1"
   },
