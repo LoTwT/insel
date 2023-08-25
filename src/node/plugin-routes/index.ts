@@ -1,5 +1,6 @@
 import { Plugin } from "vite"
 import { RouteService } from "./RouteService"
+import { PageModule } from "../../shared/types"
 
 // dir structure -> routes data
 

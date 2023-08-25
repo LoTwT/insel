@@ -12,6 +12,11 @@ export default defineConfig({
   outDir: "dist",
   format: ["cjs", "esm"],
   dts: true,
-  shims: true,
   clean: true,
+  target: "esnext",
+  banner: {
+    js: `const require = (await import("node:module")).createRequire(import.meta.url);
+const __filename = (await import("node:url")).fileURLToPath(import.meta.url);
+const __dirname = (await import("node:path")).dirname(__filename);`,
+  },
 })
